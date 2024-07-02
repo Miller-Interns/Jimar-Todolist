@@ -1,43 +1,34 @@
 <template>
-    <div id="outerForm">
-        <form>
-            <input type="text" placeholder="Task Name" v-model="category"/>
-            <p>Category:
-                <select>
-                    <option>Career</option>
-                    <option>Education</option>
-                    <option>Life</option>
-                    <option>Favorites</option>
-                    <option>Others</option>
-                </select>
-            </p>
-            
-        </form>
+  <div id="outerForm">
+    <div style="">
+      <input type="text" placeholder="Category Name">
+      <button>OK</button>
+      <p>
+        Category:
+        <select>
+          <option>Career</option>
+          <option>Education</option>
+          <option>Life</option>
+          <option>Favorites</option>
+        </select>
+      </p>
     </div>
+      
+  </div>
+
 </template>
 
-<script>
-export default{
-    data(){
-        return{
-            category:""
-        }
-    }
-}
+<script lang="ts">
+
 </script>
 
 <style scoped>
-#outerForm{
-    height:10vw;
-    width:30vw;
-    z-index:1;
-    background-color:orange;
-    position:absolute;
-    bottom:25vw;
-    left:35vw;
-    display:flex;
-    place-content:center;
-    place-items:center;
-    border:1px solid black;
+#outerForm {
+  height: fit-content;
+  width: fit-content;
+  z-index: 1;
+  background-color: orange;
+  border: 1px solid black;
+  padding:1vw;
 }
 </style>

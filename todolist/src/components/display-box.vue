@@ -1,11 +1,40 @@
 <template>
-<taskList/>
 
+<div style="height:100%;">
+  <taskList v-if="condition"/>
+
+  <div v-if="!condition" id="showNone">
+
+    <!-- Nothing Here -->
+    <div class="nothing">
+    Nothing here
+    </div> 
+    
+  </div>
+
+</div>
 </template>
 
 <script setup>
-import taskList from "./task-list.vue"
+import taskList,{condition} from './task-list.vue'
+
 </script>
 
-<style>
+<style scoped>
+#showNone{
+  width:100%;
+  height:100%;
+  display:flex;
+  place-content:center;
+  place-items:center;
+  /* border:1px solid green; */
+}
+
+.nothing{
+  font-size:2vw;
+  display:flex;
+  place-content:center;
+  place-items:center;
+}
+
 </style>

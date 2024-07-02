@@ -1,7 +1,5 @@
-<script>
-    
-</script>
+<script></script>
 
 <template>
-    <button>New Task</button>
+  <button >New Task</button>
 </template>

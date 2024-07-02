@@ -43,7 +43,7 @@ const router = createRouter({
       path: '/newForm',
       name: 'new-task-form',
       component: () => import('../components/new-task-form.vue')
-    },
+    }
   ]
 })
 
