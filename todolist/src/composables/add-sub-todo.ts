@@ -1,5 +1,5 @@
 import { ref, computed } from 'vue'
-import { ITodolist } from './Interface'
+// import { ITodolist } from './Interface'
 export const hideCompleted = ref(false)
 
 let id = 0

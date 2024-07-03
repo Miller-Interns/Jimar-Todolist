@@ -1,8 +1,9 @@
 <template>
+  <div>7/3/24</div>
   <div>John Vincent Jimar</div>
 </template>
 
-<script></script>
+<script setup lang="ts"></script>
 
 <style scoped>
 div {

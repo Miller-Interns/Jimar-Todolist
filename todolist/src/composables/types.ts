@@ -1,7 +1,6 @@
-export interface ITodolist {
+export interface TodoList {
   id: number
   text: string
   done: boolean
   editMode: boolean
-  subTask?: string[]
 }

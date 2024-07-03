@@ -1,8 +1,13 @@
-<template>
-  <div style="height: 100%">
-    <taskList v-if="condition" />
+<!--
+PURPOSE:
+DISPLAY BUTTONS FROM TOOL-BAR
+-->
 
-    <div v-if="!condition" id="showNone">
+<template>
+  <div class="heightAt100Percent"><!--STYLE PUT INTO CSS-->
+    <taskList v-if="displayTaskList" /><!--CHANGE CONDITION INTO displayTaskList-->
+
+    <div v-else id="showNone">
       <!-- Nothing Here -->
       <div class="nothing">Nothing here</div>
     </div>
@@ -10,7 +15,8 @@
 </template>
 
 <script setup>
-import taskList, { condition } from '../tasks/task-list.vue'
+import taskList from './task-list.vue'
+import { displayTaskList } from '../../../composables/conditions';
 </script>
 
 <style scoped>

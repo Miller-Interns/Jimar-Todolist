@@ -1,30 +1,32 @@
 <!-- INSIDE OF HOMEVIEW -->
 
+ <!--
+ TODOLIST APP
+ -->
+
 <template>
-  <div id="todolist">
+  <div id="outerBox_todoList"><!--Change var name into outerBox_todoList-->
     <div id="toolBar">
       <toolBar />
     </div>
+
     <div id="displayBox">
       <displayBox />
     </div>
   </div>
 </template>
 
-<script setup>
-import toolBar from './tool-bar.vue'
-import displayBox from '../main/display-box.vue'
+<script setup lang="ts">
+import toolBar from './to-do-list-components/tool-bar.vue'
+import displayBox from './to-do-list-components/display-box.vue'
 </script>
 
 <style scoped>
-#todolist {
+#outerBox_todoList {
   width: 100%;
   height: 100%;
   /* border: 1px solid red; */
   background-color: #292b29;
-  /* 
-  
-  */
 }
 
 #toolBar {

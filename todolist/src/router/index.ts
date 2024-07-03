@@ -14,26 +14,26 @@ const router = createRouter({
       name: 'todolist',
       component: () => import('../components/main/to-do-list.vue')
     },
-    {
-      path: '/addTask',
-      name: 'addTask',
-      component: () => import('../components/tasks/add-task.vue')
-    },
+    // {
+    //   path: '/addTask',
+    //   name: 'addTask',
+    //   component: () => import('../components/tasks/add-task.vue')
+    // },
     {
       path: '/taskList',
       name: 'task-list',
-      component: () => import('../components/tasks/task-list.vue')
+      component: () => import('../components/main/to-do-list-components/task-list.vue')
     },
     {
       path: '/toolBar',
       name: 'toolBar',
-      component: () => import('../components/main/tool-bar.vue')
+      component: () => import('../components/main/to-do-list-components/tool-bar.vue')
     },
-    {
-      path: '/newForm',
-      name: 'new-task-form',
-      component: () => import('../components/tasks/new-task-form.vue')
-    },
+    // {
+    //   path: '/newForm',
+    //   name: 'new-task-form',
+    //   component: () => import('../components/tasks/new-task-form.vue')
+    // },
     {
       path: '/welcome',
       name: 'welcome',

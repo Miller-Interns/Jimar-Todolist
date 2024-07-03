@@ -1,13 +1,15 @@
 // USED FOR ADDING TO-DO-LISTS
 
 import { ref, computed } from 'vue'
-import { ITodolist } from './Interface'
+import { TodoList } from './types'
+import { hideCompleted } from './conditions'
+
 // import { signUp} from './LocalStorage';
 
 let id = 0
 
-export const hideCompleted = ref(false)
-export const todos = ref<ITodolist[]>([])
+// export const hideCompleted = ref(false)
+export const todos = ref<TodoList[]>([])
 
 export const filteredTodos = computed(() => {
   return hideCompleted.value ? todos.value.filter((t) => !t.done) : todos.value

@@ -27,7 +27,7 @@
       <input type="text" placeholder="Task Name" v-model="subtask_name" />
 
       <center>
-        <button v-if="addSubtask_State" @click="addSubTodo(subtask_name, todos)">
+        <button v-if="addSubtask_State" @click="addSubTodo(subtask_name)">
           Add {{ subtask_name }}
         </button>
       </center>
@@ -44,7 +44,7 @@ import {
   hideCompleted,
   subtodos
 } from '../../composables/add-sub-todo'
-import { Subtask } from './task-list.vue'
+import { Subtask } from '../main/to-do-list-components/task-list.vue'
 import { todos } from '../../composables/add-todo'
 // import {watch} from 'vue'
 

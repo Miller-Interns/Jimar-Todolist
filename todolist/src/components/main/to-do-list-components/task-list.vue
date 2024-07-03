@@ -1,20 +1,21 @@
 <!-- INSIDE OF DISPLAY BOX -->
 
-<script lang="ts">
-import { ref, watch } from 'vue'
-import newForm from '../tasks/new-task-form.vue'
-export const condition = ref(false)
-export const addButtonState = ref(false)
-// export let editMode = ref(false)
+<!--
+Purpose:
+Lists task-forms
+-->
+
+<script lang="ts">//change into script setup lang="ts"
+import { watch } from 'vue'
+// import newForm from '../../tasks/new-task-form.vue'
 import {
   addTodo,
   filteredTodos,
   removeTodo,
   editTodo,
-  hideCompleted,
   todos
-} from '../../composables/add-todo'
-export let Subtask = ref(false)
+} from '../../../composables/add-todo'
+import { hideCompleted, Subtask, toggleHideCompleted } from '../../../composables/conditions'
 
 export default {
   setup() {
@@ -37,12 +38,13 @@ export default {
       removeTodo,
       hideCompleted,
       editTodo,
-      Subtask
+      Subtask,
+      toggleHideCompleted
     }
   },
-  components: {
-    newForm
-  },
+  // components: {
+  //   newForm
+  // },
   props: ['todos_id']
 }
 </script>
@@ -97,9 +99,9 @@ export default {
                       <span class="emoji_class">✖</span>
                     </button>
                     <!-- remove -->
-                    <button class="remove" @click="todo.editMode = !todo.editMode" v-else>
+                    <!-- <button class="remove" @click="todo.editMode = !todo.editMode" v-else>
                       Cancel
-                    </button>
+                    </button> -->
                   </div>
                   <!-- Edit Mode -->
                 </div>
@@ -108,7 +110,7 @@ export default {
                 </span>
               </span>
               <!--  -->
-              <newForm v-bind:id="'todos_id' + todo.id" />
+              <!-- <newForm v-bind:id="'todos_id' + todo.id" /> -->
               <!--  -->
             </div>
           </div>
@@ -118,87 +120,12 @@ export default {
     </div>
 
     <!-- Hide/Show Completed -->
-    <button @click="hideCompleted = !hideCompleted">
+    <button @click="toggleHideCompleted()">
       {{ hideCompleted ? 'Show all' : 'Hide completed' }}
     </button>
   </div>
 </template>
 
 <style scoped>
-#taskList {
-  width: 100%;
-  height: 100%;
-  /* border: 1px solid yellow; */
-  padding: 2vw;
-  display: inline;
-}
-
-#innerList {
-  width: 100%;
-  height: fit-content;
-  padding: 2vw;
-  border-top: 1px solid grey;
-  /* border: 1px solid blue; */
-  border-radius: 0vw;
-}
-
-#innerList button {
-  width: 20%;
-  font-size: 1vw;
-}
-
-#superInnerList {
-  display: flex;
-  width: 100%;
-  height: 20%;
-  /* background-color: yellow; */
-  border-bottom: 1px solid grey;
-  border-radius: 0vw;
-  /* border: 1px solid green; */
-  padding: 1vw;
-}
-
-#buttons_superInnerList {
-  /* border: 1px solid red; */
-  display: flex;
-  width: fit-content;
-}
-
-#buttons_superInnerList button {
-  /* border: 1px solid red; */
-  display: flex;
-  width: fit-content;
-}
-
-#showText_superInnerList {
-  width: 100%;
-  /* border: 1px solid brown; */
-}
-
-.emoji_class {
-  font-size: 1vw;
-}
-
-.clickable {
-  /* cursor: pointer; */
-  transition-duration: 0.6s;
-  margin-left: 0.5vw;
-  /* background-color: aqua; */
-  border-bottom: 1px solid grey;
-  border-radius: 0vw;
-  font-size: 2vw;
-  width: 80%;
-  display: flex;
-  place-items: center;
-}
-
-/* .clickable:hover {
-  color: red;
-  transition-duration: 0.6s;
-} */
-
-#innerClickable {
-  display: flex;
-  /* border: 1px solid purple; */
-}
+@import '../../../assets/custom-css/task-list.css';
 </style>
