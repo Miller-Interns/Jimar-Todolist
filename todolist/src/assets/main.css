@@ -41,7 +41,7 @@ a,
 body {
   display: flex;
   place-items: center;
-  background-color: #292b29;
+  background-color: #111111;
 }
 
 div {
@@ -66,7 +66,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: #f44336;
+  background-color: tomato;
   opacity: 1;
   border: none;
   color: white;
@@ -77,15 +77,40 @@ li{
   display:inline;
 }
 
-input{
-  border-radius: 1vw;
-  border:none;
+input[type=text]{
+  /* border-radius: 1vw; */
+  /* border:none;
+  width:100%;
+ */
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
 }
 
-#remove{
+input[type="checkbox"] {
+  width: 1vw;
+  height: 1vw;
+  accent-color: red;
+}
+
+input[type="checkbox"]:hover{
+  cursor:pointer;
+  accent-color: red;
+
+}
+
+.remove{
   background-color: #f44336;
+  transition: background-color 0.4s;
 }
 
-#remove:hover{
-  opacity: 0.6;
+.remove:hover{
+  background-color: red;
+}
+
+.displayBox_buttons{
 }

@@ -7,7 +7,7 @@
 
     <!-- Nothing Here -->
     <div class="nothing">
-    Nothing here
+      Nothing here
     </div> 
     
   </div>
@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import taskList,{condition} from './task-list.vue'
+import taskList,{condition} from '../tasks/task-list.vue'
 
 </script>
 
@@ -35,6 +35,7 @@ import taskList,{condition} from './task-list.vue'
   display:flex;
   place-content:center;
   place-items:center;
+  opacity:0.5;
 }
 
 </style>

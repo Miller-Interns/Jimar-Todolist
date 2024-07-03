@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/home-view.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,37 +12,37 @@ const router = createRouter({
     {
       path: '/todo',
       name: 'todolist',
-      component: () => import('../components/to-do-list.vue')
+      component: () => import('../components/main/to-do-list.vue')
     },
     {
       path: '/inbox',
       name: 'inbox',
-      component: () => import('../components/inbox.vue')
+      component: () => import('../components/main/inbox.vue')
     },
     {
       path: '/addTask',
       name: 'addTask',
-      component: () => import('../components/add-task.vue')
-    },
-    {
-      path: '/category',
-      name: 'categories',
-      component: () => import('../components/category.vue')
+      component: () => import('../components/tasks/add-task.vue')
     },
     {
       path: '/taskList',
       name: 'task-list',
-      component: () => import('../components/task-list.vue')
+      component: () => import('../components/tasks/task-list.vue')
     },
     {
       path: '/toolBar',
       name: 'toolBar',
-      component: () => import('../components/tool-bar.vue')
+      component: () => import('../components/main/tool-bar.vue')
     },
     {
       path: '/newForm',
       name: 'new-task-form',
-      component: () => import('../components/new-task-form.vue')
+      component: () => import('../components/tasks/new-task-form.vue')
+    },
+    {
+      path: '/welcome',
+      name: 'welcome',
+      component: () => import('../views/welcome-view.vue')
     }
   ]
 })

@@ -1,5 +1,8 @@
+<!-- INSIDE OF APP -->
+
+
 <script setup>
-import todolist from '../components/to-do-list.vue'
+import todolist from '../components/main/to-do-list.vue'
 </script>
 
 <template>

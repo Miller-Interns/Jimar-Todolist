@@ -1,3 +1,6 @@
+<!-- INSIDE OF HOMEVIEW -->
+
+
 <template>
   <div id="todolist">
     <div id="toolBar">
@@ -11,7 +14,7 @@
 
 <script setup>
 import toolBar from './tool-bar.vue'
-import displayBox from './display-box.vue'
+import displayBox from '../main/display-box.vue'
 </script>
 
 <style scoped>
@@ -19,7 +22,10 @@ import displayBox from './display-box.vue'
   width: 100%;
   height: 100%;
   /* border: 1px solid red; */
-  background-color: #111111;
+  background-color: #292b29;
+  /* 
+  
+  */
 }
 
 #toolBar {

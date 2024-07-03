@@ -1,18 +1,37 @@
-<!-- Purpose of style is to make homeview 100% -->
-
 <script setup>
-import home from './views/HomeView.vue'
-// import newForm from './components/new-task-form.vue'
+import home from './views/home-view.vue'
+import welcome from './views/welcome-view.vue'
+import {ref} from 'vue'
+
+let goto_todolist = ref(false)
 </script>
 
 <template>
-  <div style="height: 100%">
-    <home />
+  
+  <div v-if="!goto_todolist" id="welcome">
+    <div style="width:50%;">
+      <div>
+        <welcome/>
+      </div>
+
+      <div>
+        <button @click="goto_todolist=true">Go to App</button>
+      </div>
+    </div> 
   </div>
 
-  <div>
-    
+  <!-- If button ispressed then go to to-do-list -->
+  <div style="height: 100%" v-if="goto_todolist">
+      <home />
   </div>
 </template>
 
-<style></style>
+<style scoped>
+#welcome{
+  /* border:1px solid blue; */
+  height:100%;
+  display: flex;
+  place-content: center;
+  place-items: center;
+}
+</style>
