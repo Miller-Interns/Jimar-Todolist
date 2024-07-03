@@ -1,6 +1,6 @@
 <script setup>
 import home from './views/home-view.vue'
-import welcome from './views/welcome-view.vue'
+import welcome from './components/messages/welcome-view.vue'
 import { ref } from 'vue'
 
 let goto_todolist = ref(false)
@@ -21,7 +21,7 @@ let goto_todolist = ref(false)
 
   <!-- If button ispressed then go to to-do-list -->
   <div style="height: 100%" v-if="goto_todolist">
-    <home />
+    <home/>
   </div>
 </template>
 

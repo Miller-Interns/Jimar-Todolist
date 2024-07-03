@@ -31,3 +31,11 @@ export function toggleAddButton_State(){
 export function toggleHideCompleted(){
     hideCompleted.value = !hideCompleted.value;
 }
+
+export function toggleEditMode(update){
+    return update = !update
+}
+
+export function toggleSubtask(){
+    
+}

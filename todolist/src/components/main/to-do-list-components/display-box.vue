@@ -7,9 +7,9 @@ DISPLAY BUTTONS FROM TOOL-BAR
   <div class="heightAt100Percent"><!--STYLE PUT INTO CSS-->
     <taskList v-if="displayTaskList" /><!--CHANGE CONDITION INTO displayTaskList-->
 
-    <div v-else id="showNone">
+    <div v-else class="showNone">
       <!-- Nothing Here -->
-      <div class="nothing">Nothing here</div>
+      <NothingHere/>
     </div>
   </div>
 </template>
@@ -17,23 +17,16 @@ DISPLAY BUTTONS FROM TOOL-BAR
 <script setup>
 import taskList from './task-list.vue'
 import { displayTaskList } from '../../../composables/conditions';
+import NothingHere from '../../messages/nothing-here.vue';
 </script>
 
-<style scoped>
-#showNone {
+<style>
+.showNone {
   width: 100%;
   height: 100%;
   display: flex;
   place-content: center;
   place-items: center;
   /* border:1px solid green; */
-}
-
-.nothing {
-  font-size: 2vw;
-  display: flex;
-  place-content: center;
-  place-items: center;
-  opacity: 0.5;
 }
 </style>

@@ -24,11 +24,13 @@
       <input type="text" required placeholder="Enter Task Name" v-model="taskName" />
 
       <center>
-        <button @click="updateAddButton_State(false), addTodo(taskName)" class="isButton">
+        <button @click="updateAddButton_State(taskName===''), addTodo(taskName)" class="isButton">
           Create
         </button>
 
-        <button @click="updateAddButton_State(false)" id="cancelButton" class="isButton">Cancel</button>
+        <button @click="updateAddButton_State(false)" id="cancelButton" class="isButton">
+          Cancel
+        </button>
       </center>
     </div>
 
@@ -38,12 +40,11 @@
 </template>
 
 <script setup lang="ts">
-// import inbox from './inbox.vue'
 import { addTodo } from '../../../composables/add-todo'
-// import {editMode} from "./tasks/task-list.vue"
 import { addButton_State, toggleAddButton_State, updateAddButton_State } from '../../../composables/conditions'
 import { displayTaskList, toggleCondition, updateDisplayTaskList } from '../../../composables/conditions';
-let taskName = ''
+
+let taskName = ''; //used for v-model
 </script>
 
 <style scoped>

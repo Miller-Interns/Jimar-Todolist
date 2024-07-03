@@ -17,8 +17,8 @@
   }
   
   #innerList button {
-    width: 20%;
-    font-size: 1vw;
+    width: 30%;
+    font-size: 13px;
   }
   
   #superInnerList {
@@ -76,3 +76,14 @@
     /* border: 1px solid purple; */
   }
   
+#subtask_button{
+  display:flex;
+  place-content: center;
+  place-items: center;
+  opacity: 0.9;
+  
+}
+
+#subtask_button button{
+  background-color: tomato;
+}

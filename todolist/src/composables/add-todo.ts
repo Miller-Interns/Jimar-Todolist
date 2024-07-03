@@ -1,14 +1,11 @@
 // USED FOR ADDING TO-DO-LISTS
 
 import { ref, computed } from 'vue'
-import { TodoList } from './types'
+import { TodoList } from '../types/types'
 import { hideCompleted } from './conditions'
-
-// import { signUp} from './LocalStorage';
 
 let id = 0
 
-// export const hideCompleted = ref(false)
 export const todos = ref<TodoList[]>([])
 
 export const filteredTodos = computed(() => {
@@ -22,7 +19,6 @@ export function addTodo(taskName: string) {
   } //check if empty
 
   todos.value.push({ id: id++, text: taskName, done: false, editMode: false })
-  console.log(todos.value)
 }
 
 export function removeTodo(todo) {

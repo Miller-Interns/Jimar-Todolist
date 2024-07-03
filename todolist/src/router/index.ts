@@ -37,7 +37,7 @@ const router = createRouter({
     {
       path: '/welcome',
       name: 'welcome',
-      component: () => import('../views/welcome-view.vue')
+      component: () => import('../components/messages/welcome-view.vue')
     }
   ]
 })
