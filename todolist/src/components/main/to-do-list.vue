@@ -1,6 +1,5 @@
 <!-- INSIDE OF HOMEVIEW -->
 
-
 <template>
   <div id="todolist">
     <div id="toolBar">
@@ -36,7 +35,7 @@ import displayBox from '../main/display-box.vue'
   border-radius: 0vw;
   background-color: #151515;
   color: white;
-  padding:1vw;
+  padding: 1vw;
 }
 
 #displayBox {
@@ -45,6 +44,6 @@ import displayBox from '../main/display-box.vue'
   /* border: 1px solid blue; */
   float: right;
   border-radius: 0vw;
-  overflow:auto;
+  overflow: auto;
 }
 </style>

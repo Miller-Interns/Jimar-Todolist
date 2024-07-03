@@ -1,35 +1,34 @@
 <script setup>
 import home from './views/home-view.vue'
 import welcome from './views/welcome-view.vue'
-import {ref} from 'vue'
+import { ref } from 'vue'
 
 let goto_todolist = ref(false)
 </script>
 
 <template>
-  
   <div v-if="!goto_todolist" id="welcome">
-    <div style="width:50%;">
+    <div style="width: 50%">
       <div>
-        <welcome/>
+        <welcome />
       </div>
 
       <div>
-        <button @click="goto_todolist=true">Go to App</button>
+        <button @click="goto_todolist = true">Go to App</button>
       </div>
-    </div> 
+    </div>
   </div>
 
   <!-- If button ispressed then go to to-do-list -->
   <div style="height: 100%" v-if="goto_todolist">
-      <home />
+    <home />
   </div>
 </template>
 
 <style scoped>
-#welcome{
+#welcome {
   /* border:1px solid blue; */
-  height:100%;
+  height: 100%;
   display: flex;
   place-content: center;
   place-items: center;

@@ -43,7 +43,7 @@ export default {
   components: {
     newForm
   },
-  props:['todos_id']
+  props: ['todos_id']
 }
 </script>
 
@@ -61,14 +61,14 @@ export default {
               <span :class="{ done: todo.done }">
                 <div id="innerClickable">
                   <div class="displayFlex">
-                    <input type="checkbox" v-model="todo.done"/>
+                    <input type="checkbox" v-model="todo.done" />
                   </div>
 
                   <div
                     @click="Subtask = !Subtask"
                     class="clickable"
                     :style="todo.done ? { 'text-decoration': 'line-through' } : {}"
-                    >
+                  >
                     {{ todo.text }}
                   </div>
 
@@ -102,14 +102,13 @@ export default {
                     </button>
                   </div>
                   <!-- Edit Mode -->
-                   
                 </div>
                 <span v-if="todo.editMode">
-                  <input type="text" v-model="todo.text" maxLength="30"/>
+                  <input type="text" v-model="todo.text" maxLength="30" />
                 </span>
               </span>
               <!--  -->
-              <newForm v-bind:id="'todos_id' + todo.id"/>
+              <newForm v-bind:id="'todos_id' + todo.id" />
               <!--  -->
             </div>
           </div>
@@ -189,7 +188,7 @@ export default {
   border-radius: 0vw;
   font-size: 2vw;
   width: 80%;
-  display:flex;
+  display: flex;
   place-items: center;
 }
 

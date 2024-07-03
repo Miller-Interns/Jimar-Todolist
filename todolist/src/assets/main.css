@@ -60,7 +60,7 @@ button {
   margin: 4px 2px;
   transition: background-color 0.4s;
   cursor: pointer;
-  width:100%;
+  width: 100%;
   border-radius: 1vw;
 }
 
@@ -72,44 +72,43 @@ button:hover {
   color: white;
 }
 
-li{
+li {
   list-style-type: none;
-  display:inline;
+  display: inline;
 }
 
-input[type=text]{
- width: 100%;
- padding: 12px 20px;
- margin: 8px 0;
- display: inline-block;
- border: 1px solid #ccc;
- border-radius: 4px;
- box-sizing: border-box;
+input[type='text'] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-input[type="checkbox"] {
+input[type='checkbox'] {
   width: 2vw;
   height: 2vw;
   accent-color: red;
 }
 
-input[type="checkbox"]:hover{
-  cursor:pointer;
+input[type='checkbox']:hover {
+  cursor: pointer;
   accent-color: red;
-
 }
 
-.remove{
+.remove {
   background-color: #f44336;
   transition: background-color 0.4s;
 }
 
-.remove:hover{
+.remove:hover {
   background-color: red;
 }
 
-.displayFlex{
-  display:flex;
+.displayFlex {
+  display: flex;
   place-content: center;
   place-items: center;
 }

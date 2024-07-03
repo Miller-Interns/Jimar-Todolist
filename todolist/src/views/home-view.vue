@@ -1,6 +1,5 @@
 <!-- INSIDE OF APP -->
 
-
 <script setup>
 import todolist from '../components/main/to-do-list.vue'
 </script>
