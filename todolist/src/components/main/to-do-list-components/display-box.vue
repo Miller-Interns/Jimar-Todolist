@@ -14,7 +14,7 @@ DISPLAY BUTTONS FROM TOOL-BAR
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import taskList from './task-list.vue'
 import { displayTaskList } from '../../../composables/conditions';
 import NothingHere from '../../messages/nothing-here.vue';

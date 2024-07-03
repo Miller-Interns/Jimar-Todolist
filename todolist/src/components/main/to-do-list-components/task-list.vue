@@ -5,7 +5,7 @@ Purpose:
 Lists task-forms
 -->
 
-<script setup lang="ts">//change into script setup lang="ts"
+<script setup lang="ts">
 
 import { hideCompleted, toggleHideCompleted } from '../../../composables/conditions'
 import TaskForm from './task-form.vue';

@@ -2,6 +2,7 @@
 
  <!--
  TODOLIST APP
+The core of todolist APP
  -->
 
 <template>
