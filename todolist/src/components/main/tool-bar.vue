@@ -46,15 +46,11 @@
 
 <script setup lang="ts">
 // import inbox from './inbox.vue'
-import { addTodo, editTodo } from '../../composables/add-todo'
+import { addTodo} from '../../composables/add-todo'
 // import {editMode} from "./tasks/task-list.vue"
 import {condition, addButtonState} from '../tasks/task-list.vue'
 let taskName = '';
-let empty:boolean;
 
-if(taskName == ""){
-  empty = true;
-}
 </script>
 
 <style scoped>
@@ -93,8 +89,5 @@ input[type=checkbox]{
 
 .isButton{
   width:45%;
-}
-
-#newTask{
 }
 </style>

@@ -78,10 +78,6 @@ li{
 }
 
 input[type=text]{
-  /* border-radius: 1vw; */
-  /* border:none;
-  width:100%;
- */
  width: 100%;
  padding: 12px 20px;
  margin: 8px 0;
@@ -92,8 +88,8 @@ input[type=text]{
 }
 
 input[type="checkbox"] {
-  width: 1vw;
-  height: 1vw;
+  width: 2vw;
+  height: 2vw;
   accent-color: red;
 }
 
@@ -112,5 +108,8 @@ input[type="checkbox"]:hover{
   background-color: red;
 }
 
-.displayBox_buttons{
+.displayFlex{
+  display:flex;
+  place-content: center;
+  place-items: center;
 }

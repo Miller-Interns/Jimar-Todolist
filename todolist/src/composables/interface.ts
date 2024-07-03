@@ -1,5 +1,7 @@
 export interface ITodolist{
     id:number,
     text:string,
-    done:boolean
+    done:boolean,
+    editMode:boolean,
+    subTask?:string[]
 }

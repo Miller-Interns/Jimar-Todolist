@@ -1,8 +1,5 @@
 <template>
-    <center>
-        <p>Greetings,</p>
-        <p>I am</p>
-    </center>
+
     <div>
         John Vincent Jimar
     </div>

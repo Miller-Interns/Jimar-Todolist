@@ -1,23 +1,13 @@
-// interface ITodolist{
-//     id:number,
-//     text:string,
-//     done:boolean
-// }
-
 // USED FOR ADDING TO-DO-LISTS
 
 import { ref, computed } from 'vue'
 import { ITodolist } from "./Interface";
-import { signUp} from './LocalStorage';
+// import { signUp} from './LocalStorage';
 
 let id = 0;
-let list_of_todos = [];
 
-// const newTodo = ref('')
 export const hideCompleted = ref(false)
-export const todos = ref<ITodolist[]>([
-  // { id: id++, text: 'Learn HTML', done: true }
-])
+export const todos = ref<ITodolist[]>([])
 
 export const filteredTodos = computed(() => {
   return hideCompleted.value
@@ -30,11 +20,8 @@ export function addTodo(taskName:string) {
         alert("Must contain texts");
         return;
     }//check if empty
-    id+=1;
-    console.log(taskName)
-    signUp(id,taskName,false);
 
-    todos.value.push({ id: id++, text: taskName, done: false })
+    todos.value.push({ id: id++, text: taskName, done: false, editMode: false})
     console.log(todos.value)
 }
 

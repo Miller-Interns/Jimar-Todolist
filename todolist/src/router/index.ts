@@ -15,11 +15,6 @@ const router = createRouter({
       component: () => import('../components/main/to-do-list.vue')
     },
     {
-      path: '/inbox',
-      name: 'inbox',
-      component: () => import('../components/main/inbox.vue')
-    },
-    {
       path: '/addTask',
       name: 'addTask',
       component: () => import('../components/tasks/add-task.vue')
