@@ -1,6 +1,7 @@
 <template>
-  <div>7/3/24</div>
+  
   <div>John Vincent Jimar</div>
+  <div id="date">July 3,2024</div>
 </template>
 
 <script setup lang="ts"></script>
@@ -12,5 +13,9 @@ div {
   place-items: center;
   font-size: xx-large;
   margin: 1.5vw;
+}
+
+#date{
+  font-size:large;
 }
 </style>

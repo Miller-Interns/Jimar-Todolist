@@ -2,10 +2,12 @@
 
 import { ref, computed } from 'vue'
 import { TodoList } from '../types/types'
-import { hideCompleted } from './condition-related-stuffs/conditionals'
+import { hideCompleted } from './main-data-flow';
 
 let id = 0;
-let sub_id = 0;
+// let sub_id = 0;
+
+export const changedText = ref('default');
 
 export const todos = ref<TodoList[]>([])
 
@@ -19,6 +21,7 @@ export function addTodo(taskName: string, selectedCategory:string) {
     return
   } //check if empty
 
+  changedText.value = taskName; //initialize changed text
   todos.value.push({ id: id++, text: taskName, done: false, editMode: false, category: selectedCategory})
 }
 
@@ -33,4 +36,14 @@ export function editTodo(todo) {
 
 export function subAddTodo(sub_taskName){
   todos
+}
+
+export function checkIfTaskIsDone(doneState){
+  if(doneState == true){
+    alert('Yahalo')
+  }
+}
+
+export function checkEmpty(){
+
 }

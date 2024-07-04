@@ -6,12 +6,11 @@ Lists task-forms
 -->
 
 <script setup lang="ts">
-
-import { showIsCompletedState, toggleHideCompleted } from '../../../composables/condition-related-stuffs/conditionals'
-import TaskForm from './task-form.vue';
-import {todos} from '../../../composables/add-todo'
-import NothingHere from '../../messages/nothing-here.vue';
-
+import { showIsCompletedState } from '../../../composables/condition-related/conditionals'
+import TaskForm from './task-form.vue'
+import { todos } from '../../../composables/add-todo'
+import NothingHere from '../../messages/nothing-here.vue'
+import { toggleHideCompleted } from '../../../composables/condition-related/toggle-functions'
 </script>
 
 <template>
@@ -19,15 +18,15 @@ import NothingHere from '../../messages/nothing-here.vue';
     <span style="font-size: 1.4vw"> Tasks </span>
 
     <div class="header">
-      <TaskForm/>
+      <TaskForm />
     </div>
 
     <!-- Hide/Show Completed -->
-    <button @click="toggleHideCompleted()" v-if="todos.length!==0">
+    <button @click="toggleHideCompleted()" v-if="todos.length !== 0">
       {{ showIsCompletedState() }}
     </button>
 
-    <NothingHere v-else/>
+    <NothingHere v-else />
   </div>
 </template>
 

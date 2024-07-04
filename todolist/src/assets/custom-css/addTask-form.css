@@ -27,3 +27,11 @@
     box-sizing: border-box;
 
   }
+
+  #cancelButton{
+    background-color: #f44336;
+  }
+
+  #cancelButton:hover{
+    background-color: red;
+  }

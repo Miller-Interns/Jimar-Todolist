@@ -79,8 +79,8 @@ input[type='text'] {
 }
 
 input[type='checkbox'] {
-  width: 2vw;
-  height: 2vw;
+  width: 1.5vw;
+  height: 1.5vw;
   accent-color: red;
 }
 

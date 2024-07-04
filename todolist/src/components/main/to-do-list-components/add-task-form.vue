@@ -1,21 +1,15 @@
 <template>
-    <div id="addTaskIsPressed" class="tool-bar-element" v-if="addButton_State">
+    <div id="addTaskIsPressed" class="tool-bar-element" v-show="addButtonState">
         Task Name:
       <input type="text" required placeholder="Enter Task Name" v-model="taskName" />
       
       Category:
-      {{ selected }}
-      <select class="tool-bar-element" v-model="selected">
-        <option disabled value="">Please select one</option>
-        <option>Life</option>
-        <option>Education</option>
-        <option>Work</option>
-        <option>Nature</option>
-        <option>Others</option>
+      <select class="tool-bar-element" v-model="selectedCategory">
+        <OptionsSelect/>
       </select>
 
       <center>
-        <button @click="updateAddButton_State(taskName===''), addTodo(taskName,selected), updateDisplayTaskList(true)" class="isButton">
+        <button @click="updateAddButton_State(taskName===''), addTodo(taskName,selectedCategory), updateDisplayTaskList(true)" class="isButton">
           Create
         </button>
 
@@ -26,29 +20,15 @@
     </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 
 let taskName = ''; //used for v-model
 
 import { addTodo } from '../../../composables/add-todo'
-import { addButton_State, updateAddButton_State, updateDisplayTaskList } from '../../../composables/condition-related-stuffs/conditionals'
+import { updateAddButton_State, updateDisplayTaskList } from '../../../composables/condition-related/conditionals'
+import { addButtonState, selectedCategory } from '../../../composables/main-data-flow';
+import OptionsSelect from './templates/options-select.vue';
 
-export default{
-    setup() {
-        return{
-            taskName,
-            addTodo,
-            addButton_State,
-            updateAddButton_State,
-            updateDisplayTaskList
-        }
-    },
-    data() {
-        return{
-            selected:""
-        }
-    }
-}
 </script>
 
 <style scoped>
