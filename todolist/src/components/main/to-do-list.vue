@@ -1,12 +1,14 @@
 <!-- INSIDE OF HOMEVIEW -->
 
  <!--
- TODOLIST APP
+---------------------------
+TODOLIST APP
 The core of todolist APP
+---------------------------
  -->
 
 <template>
-  <div id="outerBox_todoList"><!--Change var name into outerBox_todoList-->
+  <div id="outerBox_todoList">
     <div id="toolBar">
       <toolBar />
     </div>

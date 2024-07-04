@@ -26,10 +26,15 @@ export function updateAddButton_State(update:boolean){
 
 export function toggleAddButton_State(){
     addButton_State.value = !addButton_State.value;
+    console.log(addButton_State.value)
 }
 
 export function toggleHideCompleted(){
     hideCompleted.value = !hideCompleted.value;
+}
+
+export function showIsCompletedState(){
+    return hideCompleted.value ? 'Show all' : 'Hide completed'
 }
 
 export function toggleEditMode(update){
@@ -39,3 +44,4 @@ export function toggleEditMode(update){
 export function toggleSubtask(){
     
 }
+

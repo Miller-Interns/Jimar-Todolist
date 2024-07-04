@@ -5,34 +5,22 @@
   <div id="outerBox_toolBar"><!-- CHANGE NAMING TYPE INTO CAMEL_CASE, change into outerBox_toolBar-->
     <!-- Inbox -->
     <div id="inbox" class="tool-bar-element" @click="toggleCondition()"><!--USE FUNCTION, NEVER USE LOGIC IN TEMPLATE; PUT IN SCRIPT-->
-      <button v-bind:style="displayTaskList ? { 'background-color': '#f44336' } : {}">Inbox</button>
+      <button v-bind:style="toggle_DisplayTaskList_Style">Inbox</button>
     </div>
 
     <!-- Add Task -->
     <div
       id="newTask"
       class="tool-bar-element"
-      @click="toggleAddButton_State(), updateDisplayTaskList(true)"
+      @click="toggleAddButton_State()"
     >
-      <button :style="addButton_State ? { 'background-color': '#f44336' } : {}">
+      <button :style="toggle_AddButton_Style">
         Add Task
       </button>
     </div>
 
-    <!-- Add Task Pressed -->
-    <div id="addTaskIsPressed" class="tool-bar-element" v-if="addButton_State">
-      <input type="text" required placeholder="Enter Task Name" v-model="taskName" />
-
-      <center>
-        <button @click="updateAddButton_State(taskName===''), addTodo(taskName)" class="isButton">
-          Create
-        </button>
-
-        <button @click="updateAddButton_State(false)" id="cancelButton" class="isButton">
-          Cancel
-        </button>
-      </center>
-    </div>
+    <!-- Add Task Pressed | Separate component-->
+    <addTaskForm/>
 
     <!-- <div style="width:100%; height:fit-content; background-color: aqua;" class="tool-bar-element">
     </div> -->
@@ -40,11 +28,11 @@
 </template>
 
 <script setup lang="ts">
-import { addTodo } from '../../../composables/add-todo'
-import { addButton_State, toggleAddButton_State, updateAddButton_State } from '../../../composables/conditions'
-import { displayTaskList, toggleCondition, updateDisplayTaskList } from '../../../composables/conditions';
+import { toggleAddButton_State } from '../../../composables/condition-related-stuffs/conditionals'
+import { toggleCondition } from '../../../composables/condition-related-stuffs/conditionals';
+import { toggle_AddButton_Style, toggle_DisplayTaskList_Style } from '../../../composables/condition-related-stuffs/conditional-styles';
+import addTaskForm from './add-task-form.vue';
 
-let taskName = ''; //used for v-model
 </script>
 
 <style scoped>

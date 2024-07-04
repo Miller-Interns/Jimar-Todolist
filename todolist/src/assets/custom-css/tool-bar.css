@@ -10,23 +10,3 @@
 #category {
   border: 1px solid lightblue;
 }
-
-#addTaskIsPressed {
-  width: 100%;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
-  border-radius: 0vw;
-  padding: 1vw;
-}
-
-#cancelButton {
-  background-color: tomato;
-}
-
-#cancelButton:hover {
-  background-color: #f44336;
-}
-
-.isButton {
-  width: 45%;
-}

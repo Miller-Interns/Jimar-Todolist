@@ -7,7 +7,7 @@ Lists task-forms
 
 <script setup lang="ts">
 
-import { hideCompleted, toggleHideCompleted } from '../../../composables/conditions'
+import { showIsCompletedState, toggleHideCompleted } from '../../../composables/condition-related-stuffs/conditionals'
 import TaskForm from './task-form.vue';
 import {todos} from '../../../composables/add-todo'
 import NothingHere from '../../messages/nothing-here.vue';
@@ -15,16 +15,16 @@ import NothingHere from '../../messages/nothing-here.vue';
 </script>
 
 <template>
-  <div id="taskList" style="float: left">
+  <div id="container" style="float: left">
     <span style="font-size: 1.4vw"> Tasks </span>
 
-    <div id="innerList">
+    <div class="header">
       <TaskForm/>
     </div>
 
     <!-- Hide/Show Completed -->
     <button @click="toggleHideCompleted()" v-if="todos.length!==0">
-      {{ hideCompleted ? 'Show all' : 'Hide completed' }}
+      {{ showIsCompletedState() }}
     </button>
 
     <NothingHere v-else/>

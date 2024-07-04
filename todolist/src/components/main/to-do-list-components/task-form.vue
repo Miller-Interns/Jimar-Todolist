@@ -2,11 +2,10 @@
   <!-- List Builder-->
   <ul>
     <li v-for="todo in filteredTodos" :key="todo.id">
-      <div id="superInnerList" style="margin-top: 1vw">
-        <!-- Checkbox || Inner Todolist-->
-        <div id="showText_superInnerList">
+      <div class="content">
+        <div class="contentMiddle">
           <span :class="{ done: todo.done }">
-            <div id="innerClickable">
+            <div id="clickableContents">
               <div class="displayFlex">
                 <input type="checkbox" v-model="todo.done" />
               </div>
@@ -16,8 +15,9 @@
                 :style="todo.done ? { 'text-decoration': 'line-through' } : {}"
               >
                 {{ todo.text }}
-              </div>
 
+              </div>
+              
               <!-- Edit Mode -->
               <div id="buttons_superInnerList">
                 <!-- edit -->
@@ -46,14 +46,34 @@
               </div>
               <!-- Edit Mode -->
             </div>
-            <span v-if="todo.editMode">
-              <input type="text" v-model="todo.text" maxLength="23" />
-            </span>
-
-            <div></div>
-            <div id="subtask_button">
-              <button>Add Subtask</button>
+            
+            Category: <span> {{todo.category}} </span>
+            <div id="editInputs">
+              <span v-if="todo.editMode">
+                <input type="text" v-model="todo.text" maxLength="23" />
+                <select class="tool-bar-element" v-model="selected">
+                  <option disabled value="">Please select one</option>
+                  <option>Life</option>
+                  <option>Education</option>
+                  <option>Work</option>
+                  <option>Nature</option>
+                  <option>Others</option>
+                </select>
+              </span>
             </div>
+              <div id="subTaskArea" v-if="false">
+                <div id="subTaskArea_content">
+                  {{todo.sub_text}}
+                  <input type="text" v-model="todo.sub_text" maxLength="23"/>
+                </div>
+              </div>
+            
+            <div id="gotoSubTask_button" v-if="false">
+              <button @click="subAddTodo(todo.subTask.sub_text)">
+                Add Subtask
+              </button>
+            </div>
+
           </span>
         </div>
       </div>
@@ -65,19 +85,25 @@
 <script lang="ts">
 //change into script setup lang="ts"
 import { watch } from 'vue'
-// import newForm from '../../tasks/new-task-form.vue'
-import { addTodo, filteredTodos, removeTodo, editTodo, todos } from '../../../composables/add-todo'
-
+import { addTodo, filteredTodos, removeTodo, editTodo, todos, subAddTodo } from '../../../composables/add-todo'
+import { receive }  from './sub-task-form.vue';
+import subTaskForm from './sub-task-form.vue';
 import {
   hideCompleted,
   Subtask,
   toggleEditMode,
   toggleHideCompleted
-} from '../../../composables/conditions'
+} from '../../../composables/condition-related-stuffs/conditionals'
 
 export default {
+  data(){
+    return{
+
+    }
+  },
   setup() {
     const list_todos = window.localStorage.getItem('todos')
+    const selected = "";
 
     if (list_todos) {
       todos.value = JSON.parse(list_todos)
@@ -98,16 +124,17 @@ export default {
       editTodo,
       Subtask,
       toggleHideCompleted,
-      toggleEditMode
+      toggleEditMode,
+      receive,
+      subTaskForm,
+      subAddTodo
     }
-  },
-  // components: {
-  //   newForm
-  // },
+},
   props: ['todos_id']
 }
 </script>
 
 <style scoped>
-@import '../../../assets/custom-css/task-list.css';
+/* @import '../../../assets/custom-css/task-list.css'; */
+@import '../../../assets/custom-css/task-form.css';
 </style>
