@@ -7,7 +7,6 @@
   width: 1000vw;
   height: 45vw;
   font-weight: normal;
-  /* border:1px solid black; */
   color: white;
 }
 
@@ -104,6 +103,6 @@ input[type='checkbox']:hover {
   place-items: center;
 }
 
-.heightAt100Percent{
-  height:100%;
+.heightAt100Percent {
+  height: 100%;
 }

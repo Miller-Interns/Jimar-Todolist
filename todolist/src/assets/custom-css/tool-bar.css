@@ -1,14 +1,9 @@
 #outerBox_toolBar {
   padding: 1vw;
-  border:1px solid green;
-  /* height:; */
+  border:1px solid grey;
 }
 
 .tool-bar-element {
   height: 10%;
-  margin-top: 1vw;
-}
-
-#category {
-  border: 1px solid lightblue;
+  margin: 1vw;
 }

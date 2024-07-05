@@ -28,14 +28,12 @@ import displayBox from './to-do-list-components/display-box.vue'
 #outerBox_todoList {
   width: 100%;
   height: 100%;
-  /* border: 1px solid red; */
   background-color: #292b29;
 }
 
 #toolBar {
   width: 30%;
   height: 100%;
-  /* border: 1px solid purple; */
   float: left;
   border-radius: 0vw;
   background-color: #151515;
@@ -46,7 +44,6 @@ import displayBox from './to-do-list-components/display-box.vue'
 #displayBox {
   width: 70%;
   height: 100%;
-  /* border: 1px solid blue; */
   float: right;
   border-radius: 0vw;
   overflow: auto;

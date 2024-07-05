@@ -2,22 +2,22 @@
   <!-- List Builder-->
   <ul>
     <li v-for="todo in filteredTodos" :key="todo.id">
-      <div class="content">
-        <div class="contentMiddle">
+      <div class="taskListContent">
+        <div class="taskListContentMiddle">
           <span :class="{ done: todo.done }">
-            <div id="clickableContents">
+            <div id="taskListClickableContents">
               <div class="displayFlex">
                 <!-- TYPE CHECKBOX -->
                 <input type="checkbox" v-model="todo.done" />
               </div>
-              <!--Edit functions-->
+
               <div class="clickable" :style="checkBoxStateToggleStyle(todo.done)">
+                <!-- SHOW TASK NAME -->
                 {{ todo.text }}
               </div>
 
-              <!-- Edit Mode -->
-              <div id="buttons_superInnerList">
-                <!-- edit -->
+              <!-- EDIT MODE -->
+              <div id="editModeButtons">
                 <div v-if="!todo.done" style="display: flex">
                   <div v-if="!todo.editMode" style="display: flex">
                     <button
@@ -27,8 +27,8 @@
                       <span class="emoji_class">🖊</span>
                     </button>
                   </div>
-                  <div v-else style="display: flex">
-                    <button class="displayBox_buttons" @click="displayBox(todo)">Change</button>
+                  <div v-else class="onEditMode">
+                    <button class="displayBox_buttons" @click="toggleEditModeState(todo)">Change</button>
 
                     <button
                       id="cancelButton"
@@ -39,20 +39,21 @@
                     </button>
                   </div>
                 </div>
-                <!-- edit -->
 
                 <!-- remove -->
-                <button class="remove" @click="removeTodo(todo)" v-if="canBeRemoved(todo)">
+                <button class="remove" @click="removeTodo(todo)" v-if="removable(todo)">
                   <span class="emoji_class">✖</span>
                 </button>
                 <!-- remove -->
               </div>
-              <!-- Edit Mode -->
+              <!-- EDIT MODE -->
             </div>
 
+            <!-- SHOW TASK CATEGORY -->
             Category: <span> {{ todo.category }} </span>
 
-            <div id="editInputs" v-if="!todo.done">
+            <!--EDIT MODE INPUTS-->
+            <div id="editModeInputs" v-if="!todo.done">
               <span v-if="todo.editMode">
                 <input
                   type="text"
@@ -65,6 +66,7 @@
                 </select>
               </span>
             </div>
+            <!--EDIT MODE INPUTS-->
           </span>
         </div>
       </div>
@@ -80,19 +82,13 @@ import { toggle } from '../../../composables/condition-related/toggle-functions'
 import { local_Storage } from '../../../stores/local-storage'
 import { checkBoxStateToggleStyle } from '../../../composables/condition-related/conditional-styles'
 import OptionsSelect from './templates/options-select.vue'
-import { TodoList } from '../../../types/types'
+import { removable, toggleEditModeState } from '../../../composables/condition-related/conditionals'
 
 onMounted(() => {
   local_Storage()
 })
 
-function displayBox(todo: TodoList) {
-  todo.editMode = toggle(todo.editMode)
-}
 
-function canBeRemoved(todo: TodoList) {
-  return !todo.editMode || todo.done
-}
 </script>
 
 <style scoped>

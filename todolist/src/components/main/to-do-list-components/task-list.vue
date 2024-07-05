@@ -13,22 +13,21 @@ import NothingHere from '../../messages/nothing-here.vue'
 import { toggleHideCompleted } from '../../../composables/condition-related/toggle-functions'
 import { TodoList } from '../../../types/types'
 
-function isNotEmpty(todos:TodoList[]){
+function isNotEmpty(todos: TodoList[]) {
   return todos.length !== 0
 }
-
 </script>
 
 <template>
-  <div id="container" style="float: left">
-    <span style="font-size: 1.4vw"> Tasks </span>
+  <div id="taskListContainer" style="float: left">
+    <span> Tasks </span>
 
-    <div class="header">
+    <div class="taskListHeader">
       <TaskForm />
     </div>
 
     <!-- Hide/Show Completed -->
-    <button @click="toggleHideCompleted()" v-if="isNotEmpty(todos)">
+    <button id="hideCompleted" @click="toggleHideCompleted()" v-if="isNotEmpty(todos)">
       {{ showIsCompletedState() }}
     </button>
 

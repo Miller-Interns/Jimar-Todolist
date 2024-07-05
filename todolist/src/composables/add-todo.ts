@@ -19,7 +19,7 @@ export function addTodo(taskName: string, selectedCategory:string) {
   if (taskName === '') {
     alert('Must contain texts')
     return
-  } //check if empty
+  } //checks if taskName is empty
 
   changedText.value = taskName; //initialize changed text
   todos.value.push({ id: id++, text: taskName, done: false, editMode: false, category: selectedCategory})
@@ -27,10 +27,4 @@ export function addTodo(taskName: string, selectedCategory:string) {
 
 export function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
-}
-
-export function checkIfTaskIsDone(doneState){
-  if(doneState === true){
-    alert('Yahalo')
-  }
 }
