@@ -1,3 +1,6 @@
+// Not using RouterLink and RouterView
+
+
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/home-view.vue'
 
@@ -14,11 +17,6 @@ const router = createRouter({
       name: 'todolist',
       component: () => import('../components/main/to-do-list.vue')
     },
-    // {
-    //   path: '/addTask',
-    //   name: 'addTask',
-    //   component: () => import('../components/tasks/add-task.vue')
-    // },
     {
       path: '/taskList',
       name: 'task-list',
@@ -29,11 +27,6 @@ const router = createRouter({
       name: 'toolBar',
       component: () => import('../components/main/to-do-list-components/tool-bar.vue')
     },
-    // {
-    //   path: '/newForm',
-    //   name: 'new-task-form',
-    //   component: () => import('../components/tasks/new-task-form.vue')
-    // },
     {
       path: '/welcome',
       name: 'welcome',

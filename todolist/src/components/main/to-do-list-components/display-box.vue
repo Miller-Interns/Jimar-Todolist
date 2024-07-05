@@ -4,13 +4,13 @@ DISPLAY BUTTONS FROM TOOL-BAR
 -->
 
 <template>
-  <div class="heightAt100Percent"><!--STYLE PUT INTO CSS-->
-    <taskList v-if="displayTaskList" /><!--CHANGE CONDITION INTO displayTaskList-->
+  <div class="heightAt100Percent">
+    <taskList v-if="displayTaskList" />
 
     <div v-else class="showNone">
-      <!-- Nothing Here -->
       <NothingHere/>
     </div>
+
   </div>
 </template>
 

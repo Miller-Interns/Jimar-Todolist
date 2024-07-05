@@ -11,6 +11,12 @@ import TaskForm from './task-form.vue'
 import { todos } from '../../../composables/add-todo'
 import NothingHere from '../../messages/nothing-here.vue'
 import { toggleHideCompleted } from '../../../composables/condition-related/toggle-functions'
+import { TodoList } from '../../../types/types'
+
+function isNotEmpty(todos:TodoList[]){
+  return todos.length !== 0
+}
+
 </script>
 
 <template>
@@ -22,7 +28,7 @@ import { toggleHideCompleted } from '../../../composables/condition-related/togg
     </div>
 
     <!-- Hide/Show Completed -->
-    <button @click="toggleHideCompleted()" v-if="todos.length !== 0">
+    <button @click="toggleHideCompleted()" v-if="isNotEmpty(todos)">
       {{ showIsCompletedState() }}
     </button>
 

@@ -1,7 +1,7 @@
 <template>
   
   <div>John Vincent Jimar</div>
-  <div id="date">July 3,2024</div>
+  <div id="date">Created: July 5,2024</div>
 </template>
 
 <script setup lang="ts"></script>

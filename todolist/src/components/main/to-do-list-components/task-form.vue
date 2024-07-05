@@ -7,47 +7,42 @@
           <span :class="{ done: todo.done }">
             <div id="clickableContents">
               <div class="displayFlex">
-                <!-- CHECKBOX -->
+                <!-- TYPE CHECKBOX -->
                 <input type="checkbox" v-model="todo.done" />
               </div>
               <!--Edit functions-->
-              <div class="clickable" :style="todo.done ? lineThrough : {}">
+              <div class="clickable" :style="checkBoxStateToggleStyle(todo.done)">
                 {{ todo.text }}
               </div>
 
               <!-- Edit Mode -->
               <div id="buttons_superInnerList">
                 <!-- edit -->
-                <button
-                  class="displayBox_buttons"
-                  @click="editTodo(todo), (todo.editMode = toggle(todo.editMode))"
-                  v-if="!todo.editMode && !todo.done"
-                >
-                  <span class="emoji_class">🖊</span>
-                </button>
+                <div v-if="!todo.done" style="display: flex">
+                  <div v-if="!todo.editMode" style="display: flex">
+                    <button
+                      class="displayBox_buttons"
+                      @click="todo.editMode = toggle(todo.editMode)"
+                    >
+                      <span class="emoji_class">🖊</span>
+                    </button>
+                  </div>
+                  <div v-else style="display: flex">
+                    <button class="displayBox_buttons" @click="displayBox(todo)">Change</button>
 
-                <button
-                  class="displayBox_buttons"
-                  @click="
-                    (todo.editMode = toggle(todo.editMode)), (todo.category = selectedCategory)
-                  "
-                  v-if="todo.editMode && !todo.done"
-                >
-                  Change
-                </button>
-
-                <button
-                  id="cancelButton"
-                  class="displayBox_buttons"
-                  @click="todo.editMode = toggle(todo.editMode)"
-                  v-if="todo.editMode && !todo.done"
-                >
-                  Cancel
-                </button>
+                    <button
+                      id="cancelButton"
+                      class="displayBox_buttons"
+                      @click="todo.editMode = toggle(todo.editMode)"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
                 <!-- edit -->
 
                 <!-- remove -->
-                <button class="remove" @click="removeTodo(todo)" v-if="!todo.editMode || todo.done">
+                <button class="remove" @click="removeTodo(todo)" v-if="canBeRemoved(todo)">
                   <span class="emoji_class">✖</span>
                 </button>
                 <!-- remove -->
@@ -59,8 +54,13 @@
 
             <div id="editInputs" v-if="!todo.done">
               <span v-if="todo.editMode">
-                <input type="text" v-model="todo.text" required maxLength="23" /><!--TYPE TEXT-->
-                <select class="tool-bar-element" v-model="selectedCategory">
+                <input
+                  type="text"
+                  v-model.lazy="todo.text"
+                  required
+                  maxLength="23"
+                /><!--TYPE TEXT-->
+                <select class="tool-bar-element" v-model="todo.category">
                   <OptionsSelect />
                 </select>
               </span>
@@ -74,18 +74,25 @@
 </template>
 
 <script setup lang="ts">
-//change into script setup lang="ts"
 import { onMounted } from 'vue'
-import { filteredTodos, removeTodo, editTodo } from '../../../composables/add-todo'
+import { filteredTodos, removeTodo } from '../../../composables/add-todo'
 import { toggle } from '../../../composables/condition-related/toggle-functions'
 import { local_Storage } from '../../../stores/local-storage'
-import { lineThrough } from '../../../composables/condition-related/conditional-styles'
+import { checkBoxStateToggleStyle } from '../../../composables/condition-related/conditional-styles'
 import OptionsSelect from './templates/options-select.vue'
-import { selectedCategory } from '../../../composables/main-data-flow'
+import { TodoList } from '../../../types/types'
 
 onMounted(() => {
   local_Storage()
 })
+
+function displayBox(todo: TodoList) {
+  todo.editMode = toggle(todo.editMode)
+}
+
+function canBeRemoved(todo: TodoList) {
+  return !todo.editMode || todo.done
+}
 </script>
 
 <style scoped>

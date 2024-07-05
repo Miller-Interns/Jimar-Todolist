@@ -16,7 +16,7 @@ export const filteredTodos = computed(() => {
 })
 
 export function addTodo(taskName: string, selectedCategory:string) {
-  if (taskName == '') {
+  if (taskName === '') {
     alert('Must contain texts')
     return
   } //check if empty
@@ -29,21 +29,8 @@ export function removeTodo(todo) {
   todos.value = todos.value.filter((t) => t !== todo)
 }
 
-export function editTodo(todo) {
-  todo = null
-  console.log(todo)
-}
-
-export function subAddTodo(sub_taskName){
-  todos
-}
-
 export function checkIfTaskIsDone(doneState){
-  if(doneState == true){
+  if(doneState === true){
     alert('Yahalo')
   }
-}
-
-export function checkEmpty(){
-
 }

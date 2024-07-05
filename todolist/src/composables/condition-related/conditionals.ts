@@ -17,8 +17,3 @@ export function updateAddButton_State(update:boolean){
 export function showIsCompletedState(){
     return hideCompleted.value ? 'Show all' : 'Hide completed'
 }
-
-export function toggleSubtask(){
-    
-}
-

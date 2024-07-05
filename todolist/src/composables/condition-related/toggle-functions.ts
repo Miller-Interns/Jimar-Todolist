@@ -1,6 +1,6 @@
 import { displayTaskList, addButtonState, hideCompleted, checkBoxState } from "../main-data-flow";
 
-export function toggleCondition(){
+export function toggleDisplayTaskList(){
     displayTaskList.value = !displayTaskList.value;
 }
 

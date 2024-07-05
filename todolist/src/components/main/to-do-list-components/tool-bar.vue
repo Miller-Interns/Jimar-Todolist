@@ -3,8 +3,8 @@
 <template>
   <div id="outerBox_toolBar">
     <!-- Inbox -->
-    <div id="inbox" class="tool-bar-element" @click="toggleCondition()">
-      <button v-bind:style="toggleDisplayTaskListStyle">Inbox</button>
+    <div id="inbox" class="tool-bar-element" @click="toggleDisplayTaskList()">
+      <button v-bind:style="toggleDisplayTaskListStyle">Tasks</button>
     </div>
 
     <!-- Add Task -->
@@ -15,20 +15,14 @@
     <!-- Add Task Form -->
     <addTaskForm />
 
-    <!-- List of Categories -->
-    <CategoriesList />
   </div>
 </template>
 
 <script setup lang="ts">
 import { toggleAddButtonState } from '../../../composables/condition-related/toggle-functions'
-import { toggleCondition } from '../../../composables/condition-related/toggle-functions'
-import {
-  toggleAddButtonStyle,
-  toggleDisplayTaskListStyle
-} from '../../../composables/condition-related/conditional-styles'
+import { toggleDisplayTaskList } from '../../../composables/condition-related/toggle-functions'
+import {toggleAddButtonStyle,toggleDisplayTaskListStyle} from '../../../composables/condition-related/conditional-styles'
 import addTaskForm from './add-task-form.vue'
-import CategoriesList from './categories-components/categories-list.vue'
 </script>
 
 <style scoped>

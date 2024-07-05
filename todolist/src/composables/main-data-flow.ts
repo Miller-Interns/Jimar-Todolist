@@ -8,3 +8,13 @@ export const editMode = ref(false);
 export const Subtask = ref(false);
 export const checkBoxState = ref(true);
 export const selectedCategory = ref('default');
+export const selectedShowCategory = ref('default')
+export const selectedShowCategoryState = ref(false)
+
+export function showSelectedCategory(dataReceived){
+    selectedShowCategory.value = dataReceived;
+}
+
+export function showSelectedCategoryToggle(){
+    selectedShowCategoryState.value = !selectedShowCategoryState.value
+}
