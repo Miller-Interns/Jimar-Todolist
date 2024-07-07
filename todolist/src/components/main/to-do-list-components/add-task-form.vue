@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 
-let taskName = ''; //used for v-model
+const taskName = ref(''); //used for v-model
 
 import { addTodo } from '../../../composables/add-todo'
 import { updateAddButton_State, updateDisplayTaskList } from '../../../composables/condition-related/conditionals'

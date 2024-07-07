@@ -4,8 +4,8 @@ import { ref, computed } from 'vue'
 import { TodoList } from '../types/types'
 import { hideCompleted } from './main-data-flow';
 
-let id = 0;
-// let sub_id = 0;
+const id = ref(0);
+
 
 export const changedText = ref('default');
 
