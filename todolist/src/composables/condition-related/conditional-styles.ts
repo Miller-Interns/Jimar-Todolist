@@ -19,16 +19,5 @@ export const checkBoxStateToggleStyle = (isDone:boolean) => {
     })).value
 }
 
-
-
-//UNCOMMENT TO USE
-
-//Colors
+// COLOR STYLE
 const colorSoftRed = { 'background-color': '#f44336' }
-// const colorSoftGreen = {'background-color' : '#04aa6d'}
-// const colorSoftBlue = {'background-color' : 'blue'}
-
-//Others
-// const opacityMax = {'opacity':'1'}
-// const opacityLow = {'opacity':'0.6'}
-// const noOpacity = {'opacity':'0'}

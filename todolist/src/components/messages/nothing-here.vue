@@ -4,6 +4,8 @@
   <div class="nothing">Nothing Here</div>
 </template>
 
+<script setup lang="ts"></script>
+
 <style scoped>
 .nothing {
   font-size: 2vw;

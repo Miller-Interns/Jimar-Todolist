@@ -1,6 +1,6 @@
 import {ref} from 'vue'
 
-//Definitions
+//Initialize
 export const displayTaskList = ref(false);
 export const addButtonState = ref(false);
 export const hideCompleted = ref(false);
@@ -14,6 +14,3 @@ export function showSelectedCategory(dataReceived){
     selectedShowCategory.value = dataReceived;
 }
 
-export function showSelectedCategoryToggle(){
-    selectedShowCategoryState.value = !selectedShowCategoryState.value
-}

@@ -6,13 +6,13 @@
       <welcome />
 
       <center>
-        <RouterLink :to="'/todoview'">Go to App</RouterLink>
+        <RouterLink :to="{name:'todolistview'}">Go to App</RouterLink>
       </center>
     </div>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { RouterLink } from 'vue-router'
 import welcome from '../components/messages/welcome-view.vue'
 </script>

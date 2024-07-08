@@ -5,7 +5,6 @@ Export/Import conditions
 
 import { TodoList } from '../../types/types';
 import { displayTaskList, addButtonState, hideCompleted,  } from '../main-data-flow';
-import { toggle } from './toggle-functions';
 
 //Updating Functions
 export function updateDisplayTaskList(update:boolean){
@@ -21,7 +20,7 @@ export function showIsCompletedState(){
 }
 
 export function toggleEditModeState(todo: TodoList) {
-    todo.editModeState = toggle(todo.editModeState)
+    todo.editModeState = !todo.editModeState
   }
   
 export function removable(todo: TodoList) {

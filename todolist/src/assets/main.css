@@ -106,3 +106,7 @@ input[type='checkbox']:hover {
 .heightAt100Percent {
   height: 100%;
 }
+
+.marginTopBy1vw{
+  margin-top: 1vw;
+}

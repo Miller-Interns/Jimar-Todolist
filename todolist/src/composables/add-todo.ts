@@ -6,7 +6,6 @@ import { hideCompleted } from './main-data-flow';
 
 const id = ref(0);
 
-
 export const changedText = ref('default');
 
 export const todos = ref<TodoList[]>([])
@@ -16,10 +15,11 @@ export const filteredTodos = computed(() => {
 })
 
 export function addTodo(taskName: string, selectedCategory:string) {
+  //checks if taskName is empty
   if (taskName === '') {
     alert('Must contain texts')
     return
-  } //checks if taskName is empty
+  } 
 
   changedText.value = taskName; //initialize changed text
   todos.value.push({ id: id.value++, text: taskName, done: false, editModeState: false, category: selectedCategory})

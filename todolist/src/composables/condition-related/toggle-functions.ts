@@ -1,4 +1,4 @@
-import { displayTaskList, addButtonState, hideCompleted, checkBoxState } from "../main-data-flow";
+import { displayTaskList, addButtonState, hideCompleted, checkBoxState, selectedShowCategoryState } from "../main-data-flow";
 
 export function toggleDisplayTaskList(){
     displayTaskList.value = !displayTaskList.value;
@@ -16,6 +16,6 @@ export function checkBoxStateToggle(updateCompleted){
     checkBoxState.value = updateCompleted;
 }
 
-export function toggle(update){
-    return update = !update
+export function showSelectedCategoryToggle(){
+    selectedShowCategoryState.value = !selectedShowCategoryState.value
 }
