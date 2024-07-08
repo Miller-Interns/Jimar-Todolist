@@ -11,10 +11,11 @@
 
 .taskListHeader {
   width: 100%;
-  height: fit-content;
-  padding: 2vw;
+  height: 34vw;
+  padding-right: 2vw;
   border-top: 1px solid grey;
   border-radius: 0vw;
+  overflow: auto;
 }
 
 .taskListHeader button {

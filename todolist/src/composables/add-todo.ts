@@ -22,7 +22,8 @@ export function addTodo(taskName: string, selectedCategory:string) {
   } //checks if taskName is empty
 
   changedText.value = taskName; //initialize changed text
-  todos.value.push({ id: id++, text: taskName, done: false, editMode: false, category: selectedCategory})
+  todos.value.push({ id: id.value++, text: taskName, done: false, editModeState: false, category: selectedCategory})
+  console.log(todos.value)
 }
 
 export function removeTodo(todo) {

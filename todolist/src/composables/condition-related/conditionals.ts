@@ -21,9 +21,9 @@ export function showIsCompletedState(){
 }
 
 export function toggleEditModeState(todo: TodoList) {
-    todo.editMode = toggle(todo.editMode)
+    todo.editModeState = toggle(todo.editModeState)
   }
   
 export function removable(todo: TodoList) {
-    return !todo.editMode || todo.done
+    return !todo.editModeState || todo.done
   }

@@ -2,6 +2,6 @@ export type TodoList = {
   id: number
   text: string
   done: boolean
-  editMode: boolean,
+  editModeState: boolean,
   category:string
 }

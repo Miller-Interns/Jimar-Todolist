@@ -5,7 +5,7 @@ DISPLAY BUTTONS FROM TOOL-BAR
 
 <template>
   <div class="heightAt100Percent">
-    <taskList v-if="displayTaskList" />
+    <taskList v-if="displayTaskList"/>
 
     <div v-else class="showNone">
       <NothingHere/>

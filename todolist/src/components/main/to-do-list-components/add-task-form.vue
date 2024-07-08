@@ -9,7 +9,7 @@
       </select>
 
       <center>
-        <button @click="updateAddButton_State(taskName===''), addTodo(taskName,selectedCategory), updateDisplayTaskList(true)" class="isButton">
+        <button @click="createToDo" class="isButton">
           Create
         </button>
 
@@ -20,14 +20,22 @@
     </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang='ts'>
 
-const taskName = ref(''); //used for v-model
 
+import {ref} from 'vue'
 import { addTodo } from '../../../composables/add-todo'
 import { updateAddButton_State, updateDisplayTaskList } from '../../../composables/condition-related/conditionals'
 import { addButtonState, selectedCategory } from '../../../composables/main-data-flow';
 import OptionsSelect from './templates/options-select.vue';
+
+const taskName = ref(''); //used for v-model
+
+function createToDo(){
+updateAddButton_State(taskName.value==='') 
+addTodo(taskName.value,selectedCategory.value) 
+updateDisplayTaskList(true)
+}
 
 </script>
 

@@ -16,15 +16,15 @@ a,
   color: black;
   transition: 0.4s;
   padding: 3px;
-  background-color: #bd7f4c;
+  background-color: #04aa6d;
+  border-radius: 1vw;
+  width:100%;
+  color: white;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-    border-radius: 1vw;
-    border: none;
-    color: white;
+    background-color: tomato;
   }
 }
 

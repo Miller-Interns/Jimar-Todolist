@@ -1,9 +1,9 @@
 #outerBox_toolBar {
   padding: 1vw;
-  border:1px solid grey;
+  border:1px solid grey;  
 }
 
 .tool-bar-element {
   height: 10%;
-  margin: 1vw;
+  margin-top: 1vw;
 }
