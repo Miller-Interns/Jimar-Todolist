@@ -6,7 +6,7 @@
       <welcome />
 
       <center>
-        <RouterLink :to="{name:'todolistview'}">Go to App</RouterLink>
+        <RouterLink :to="{ name: 'todolistview' }">Go to App</RouterLink>
       </center>
     </div>
   </div>

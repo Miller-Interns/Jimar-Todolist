@@ -10,15 +10,14 @@ Lists task-forms
     <span> Tasks </span>
 
     <div class="taskListHeader">
-      <TaskForm v-if="isNotEmpty(todos)"/>
-      <NothingHere v-else class="centerize"/>
+      <TaskForm v-if="isNotEmpty(todos)" />
+      <NothingHere v-else class="centerize" />
     </div>
 
     <!-- Hide/Show Completed -->
     <button id="hideCompleted" @click="toggleHideCompleted()" v-if="isNotEmpty(todos)">
       {{ showIsCompletedState() }}
     </button>
-    
   </div>
 </template>
 
@@ -43,8 +42,8 @@ onMounted(() => {
 
 <style scoped>
 @import '../../../assets/custom-css/task-list.css';
-.centerize{
-  margin-top:35vh;
-  margin-left:2vw;
+.centerize {
+  margin-top: 35vh;
+  margin-left: 2vw;
 }
 </style>

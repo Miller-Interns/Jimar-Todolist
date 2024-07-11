@@ -14,14 +14,16 @@
 
     <!-- Add Task Form -->
     <addTaskForm />
-
   </div>
 </template>
 
 <script setup lang="ts">
 import { toggleAddButtonState } from '../../../composables/condition-related/toggle-functions'
 import { toggleDisplayTaskList } from '../../../composables/condition-related/toggle-functions'
-import {toggleAddButtonStyle,toggleDisplayTaskListStyle} from '../../../composables/condition-related/conditional-styles'
+import {
+  toggleAddButtonStyle,
+  toggleDisplayTaskListStyle
+} from '../../../composables/condition-related/conditional-styles'
 import addTaskForm from './add-task-form.vue'
 </script>
 

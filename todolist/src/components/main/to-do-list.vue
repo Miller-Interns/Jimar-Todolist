@@ -1,6 +1,6 @@
 <!-- INSIDE OF HOMEVIEW -->
 
- <!--
+<!--
 ---------------------------
 TODOLIST APP
 The core of todolist APP
@@ -46,7 +46,6 @@ import displayBox from './to-do-list-components/display-box.vue'
   height: 100%;
   float: right;
   border-radius: 0vw;
-  
 }
 
 ::-webkit-scrollbar {
@@ -55,16 +54,16 @@ import displayBox from './to-do-list-components/display-box.vue'
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+  background: #f1f1f1;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 </style>

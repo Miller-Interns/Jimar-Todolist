@@ -1,7 +1,6 @@
 <template>
-  
-  <P>John Vincent Jimar</p>
-  <P id="date">Created: July 5,2024</p>
+  <P>John Vincent Jimar</P>
+  <P id="date">Created: July 5,2024</P>
 </template>
 
 <script setup lang="ts"></script>
@@ -15,7 +14,7 @@ p {
   margin: 1.5vw;
 }
 
-#date{
-  font-size:large;
+#date {
+  font-size: large;
 }
 </style>

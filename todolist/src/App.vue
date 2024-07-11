@@ -6,5 +6,3 @@ import { RouterView } from 'vue-router'
   <!-- Viewing home-view.vue -->
   <RouterView />
 </template>
-
-<style scoped></style>

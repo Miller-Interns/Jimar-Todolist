@@ -1,11 +1,11 @@
 <template>
-    <div id="homeBox">
-        <toDoList />
+  <div id="homeBox">
+    <toDoList />
   </div>
 </template>
 
 <script setup lang="ts">
-import toDoList from '../components/main/to-do-list.vue';
+import toDoList from '../components/main/to-do-list.vue'
 </script>
 
 <style scoped>

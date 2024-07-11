@@ -18,7 +18,7 @@ a,
   padding: 3px;
   background-color: #04aa6d;
   border-radius: 1vw;
-  width:100%;
+  width: 100%;
   color: white;
 }
 
@@ -107,6 +107,6 @@ input[type='checkbox']:hover {
   height: 100%;
 }
 
-.marginTopBy1vw{
+.marginTopBy1vw {
   margin-top: 1vw;
 }

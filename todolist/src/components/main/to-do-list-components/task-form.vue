@@ -2,7 +2,7 @@
   <!-- List Builder-->
   <ul>
     <li v-for="todo in filteredTodos" :key="todo.id">
-      <taskFormContent :todo="todo"/>
+      <taskFormContent :todo="todo" />
     </li>
   </ul>
   <!-- List Builder -->

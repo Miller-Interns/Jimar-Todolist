@@ -5,19 +5,18 @@ DISPLAY BUTTONS FROM TOOL-BAR
 
 <template>
   <div class="heightAt100Percent">
-    <taskList v-if="displayTaskList"/>
+    <taskList v-if="displayTaskList" />
 
     <div v-else class="showNone">
-      <NothingHere/>
+      <NothingHere />
     </div>
-
   </div>
 </template>
 
 <script setup lang="ts">
 import taskList from './task-list.vue'
-import { displayTaskList } from '../../../composables/main-data-flow';
-import NothingHere from '../../messages/nothing-here.vue';
+import { displayTaskList } from '../../../composables/main-data-flow'
+import NothingHere from '../../messages/nothing-here.vue'
 </script>
 
 <style>
