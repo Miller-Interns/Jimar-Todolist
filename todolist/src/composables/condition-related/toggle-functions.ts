@@ -3,7 +3,8 @@ import {
   addButtonState,
   hideCompleted,
   checkBoxState,
-  selectedShowCategoryState
+  selectedShowCategoryState,
+  showCategoryOptions
 } from '../main-data-flow'
 
 export function toggleDisplayTaskList() {
@@ -24,4 +25,8 @@ export function checkBoxStateToggle(updateCompleted) {
 
 export function showSelectedCategoryToggle() {
   selectedShowCategoryState.value = !selectedShowCategoryState.value
+}
+
+export function toggleShowCategoryOptions() {
+  showCategoryOptions.value = !showCategoryOptions.value;
 }

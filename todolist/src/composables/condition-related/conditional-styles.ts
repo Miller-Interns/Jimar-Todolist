@@ -3,7 +3,7 @@
 
 import { computed } from 'vue'
 
-import { addButtonState, displayTaskList } from '../main-data-flow'
+import { addButtonState, displayTaskList, showCategoryOptions } from '../main-data-flow'
 
 export const toggleAddButtonStyle = computed(() => {
   return addButtonState.value ? colorSoftRed : {}
@@ -18,6 +18,10 @@ export const checkBoxStateToggleStyle = (isDone: boolean) => {
     textDecoration: isDone ? 'line-through' : 'none'
   })).value
 }
+
+export const toggleShowCategoryOptionStyle = computed(() => {
+  return showCategoryOptions.value ? {} : {'rotate':'180deg'}
+})
 
 // COLOR STYLE
 const colorSoftRed = { 'background-color': '#f44336' }

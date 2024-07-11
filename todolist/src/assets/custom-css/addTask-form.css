@@ -25,3 +25,7 @@
 #cancelButton:hover {
   background-color: red;
 }
+
+#addTaskSelectCategory{
+  border-radius: 0vw;
+}

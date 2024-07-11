@@ -9,6 +9,7 @@ export const checkBoxState = ref(true)
 export const selectedCategory = ref('default')
 export const selectedShowCategory = ref('default')
 export const selectedShowCategoryState = ref(false)
+export const showCategoryOptions = ref(false)
 
 export function showSelectedCategory(dataReceived) {
   selectedShowCategory.value = dataReceived

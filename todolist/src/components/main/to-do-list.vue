@@ -38,7 +38,8 @@ import displayBox from './to-do-list-components/display-box.vue'
   border-radius: 0vw;
   background-color: #151515;
   color: white;
-  padding: 1vw;
+  padding: 0.5vw;
+  overflow: auto;
 }
 
 #displayBox {

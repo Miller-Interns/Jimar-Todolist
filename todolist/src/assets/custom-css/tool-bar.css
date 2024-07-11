@@ -1,9 +1,22 @@
-#outerBox_toolBar {
-  padding: 1vw;
+.outerBox_toolBar {
+  padding: 0.5vw;
   border: 1px solid grey;
+  margin-bottom: 1vw;
 }
 
 .tool-bar-element {
   height: 10%;
-  margin-top: 1vw;
+  margin: 0.5vw;
+}
+
+#categoriesContent{
+  border-radius: 0vw;
+  padding: 1vw;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.noMargin{
+  margin:0;
 }
