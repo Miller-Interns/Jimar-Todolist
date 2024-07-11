@@ -1,3 +1,4 @@
+import { TodoList } from '../../types/types'
 import {
   displayTaskList,
   addButtonState,
@@ -29,4 +30,8 @@ export function showSelectedCategoryToggle() {
 
 export function toggleShowCategoryOptions() {
   showCategoryOptions.value = !showCategoryOptions.value;
+}
+
+export function toggleEditModeState(todo: TodoList) {
+  todo.editModeState = !todo.editModeState
 }

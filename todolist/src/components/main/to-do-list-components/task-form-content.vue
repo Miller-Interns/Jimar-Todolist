@@ -5,7 +5,7 @@
         <div id="taskListClickableContents">
           <div class="displayFlex">
             <!-- TYPE CHECKBOX -->
-            <input type="checkbox" v-model="todo.done" />
+            <input type="checkbox" v-model="isDoneModel" />
           </div>
 
           <div class="clickable" :style="checkBoxStateToggleStyle(isDone)">
@@ -58,17 +58,29 @@
 <script setup lang="ts">
 import { removeTodo } from '../../../composables/add-todo'
 import { checkBoxStateToggleStyle } from '../../../composables/condition-related/conditional-styles'
-import { removable, toggleEditModeState } from '../../../composables/condition-related/conditionals'
+import { removable } from '../../../composables/condition-related/conditionals'
 import { TodoList } from '../../../types/types'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import optionsSelect from './templates/tool-bar-category-options.vue'
+import { toggleEditModeState } from '../../../composables/condition-related/toggle-functions'
 
 const props = defineProps<{
   todo: TodoList
 }>()
 
+const propsTodoGet = ref(props.todo)
+
 const isDone = computed(() => {
   return props.todo.done
+})
+
+const isDoneModel = computed({
+  get(){
+    return props.todo.done
+  },
+  set(receivedModel){
+    return (propsTodoGet.value.done = receivedModel)
+  }
 })
 
 const taskName = computed({
@@ -76,7 +88,7 @@ const taskName = computed({
     return props.todo.text
   },
   set(newName) {
-    return (props.todo.text = newName)
+    return (propsTodoGet.value.text = newName)
   }
 })
 
@@ -85,13 +97,14 @@ const category = computed({
     return props.todo.category
   },
   set(newCategory) {
-    return (props.todo.category = newCategory)
+    return (propsTodoGet.value.category = newCategory)
   }
 })
 
 const editMode = computed(() => {
   return props.todo.editModeState
 })
+
 </script>
 
 <style scoped>

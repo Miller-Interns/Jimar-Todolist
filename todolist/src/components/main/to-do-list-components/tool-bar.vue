@@ -27,7 +27,7 @@
          </div>
          
       </div>
-      <OptionsSelect v-if="showCategoryOptions" class="bgColorSoftDarkGrey"/>
+      <categoryOptions v-if="showCategoryOptions" class="bgColorSoftDarkGrey"/>
     </div>
   </div>
 </template>
@@ -41,7 +41,7 @@ import {
   toggleShowCategoryOptionStyle
 } from '../../../composables/condition-related/conditional-styles'
 import addTaskForm from './add-task-form.vue'
-import OptionsSelect from './templates/tool-bar-category-options.vue';
+import categoryOptions from './templates/tool-bar-category-options.vue';
 import { showCategoryOptions } from '../../../composables/main-data-flow';
 </script>
 

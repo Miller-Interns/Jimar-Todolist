@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { updateDisplayEducationCategory_State, updateDisplayLifeCategory_State, updateDisplayNatureCategory_State, updateDisplayOthersCategory_State, updateDisplayWorkCategory_State } from '../../../../composables/condition-related/conditionals';
+</script>
+
 <!-- 
   PURPOSE:
   TOOL-BAR CATEGORY OPTIONS
@@ -7,11 +11,11 @@
 
 <template>
   <!-- <option id="disabled" disabled value="" style="cursor: default;">Please select one</option> -->
-  <option @click="goToLifePage">Life</option>
-  <option @click="goToEducationPage">Education</option>
-  <option @click="goToWorkPage">Work</option>
-  <option @click="goToNaturePage">Nature</option>
-  <option @click="goToOthersPage">Others</option>
+  <option @click="updateDisplayLifeCategory_State(true)">Life</option>
+  <option @click="updateDisplayEducationCategory_State(true)">Education</option>
+  <option @click="updateDisplayWorkCategory_State(true)">Work</option>
+  <option @click="updateDisplayNatureCategory_State(true)">Nature</option>
+  <option @click="updateDisplayOthersCategory_State(true)">Others</option>
 </template>
 
 <style scoped>
@@ -20,6 +24,7 @@ option {
   cursor: pointer;
   transition-duration: 0.5s;
   padding: 1vw;
+  color:white;
 }
 
 option:hover {

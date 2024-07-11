@@ -20,3 +20,11 @@
 .noMargin{
   margin:0;
 }
+
+#addTaskContainer button{
+  background-color: #353839;
+}
+
+#addTaskContainer button:hover{
+  background-color: rgb(196, 83, 63);
+}

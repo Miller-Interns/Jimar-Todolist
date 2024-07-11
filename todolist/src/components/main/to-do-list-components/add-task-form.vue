@@ -28,7 +28,7 @@ import {
   updateDisplayTaskList
 } from '../../../composables/condition-related/conditionals'
 import { addButtonState, selectedCategory } from '../../../composables/main-data-flow'
-import OptionsSelect from './templates/tool-bar-category-options.vue'
+import OptionsSelect from './templates/category-select-options.vue'
 
 const taskName = ref('') //used for v-model
 
