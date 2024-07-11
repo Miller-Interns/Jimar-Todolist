@@ -4,8 +4,8 @@
     <input type="text" required placeholder="Enter Task Name" v-model="taskName" />
 
     Category:
-    <select class="tool-bar-element" v-model="selectedCategory">
-      <OptionsSelect />
+    <select id="addTaskSelectCategory" class="tool-bar-element" v-model="selectedCategory">
+      <OptionsSelect style="border-radius: 0vw;"/>
     </select>
 
     <div class="marginTopBy1vw">
@@ -28,7 +28,7 @@ import {
   updateDisplayTaskList
 } from '../../../composables/condition-related/conditionals'
 import { addButtonState, selectedCategory } from '../../../composables/main-data-flow'
-import OptionsSelect from './templates/options-select.vue'
+import OptionsSelect from './templates/tool-bar-category-options.vue'
 
 const taskName = ref('') //used for v-model
 

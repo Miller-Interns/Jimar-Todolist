@@ -61,7 +61,7 @@ import { checkBoxStateToggleStyle } from '../../../composables/condition-related
 import { removable, toggleEditModeState } from '../../../composables/condition-related/conditionals'
 import { TodoList } from '../../../types/types'
 import { computed } from 'vue'
-import optionsSelect from './templates/options-select.vue'
+import optionsSelect from './templates/tool-bar-category-options.vue'
 
 const props = defineProps<{
   todo: TodoList
