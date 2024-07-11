@@ -20,6 +20,7 @@ option {
   cursor: pointer;
   transition-duration: 0.5s;
   padding: 1vw;
+  color:white;
 }
 
 option:hover {
