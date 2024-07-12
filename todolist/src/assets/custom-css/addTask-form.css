@@ -1,0 +1,31 @@
+#addTaskIsPressed {
+  width: 100%;
+  border-top: 1px solid grey;
+  border-radius: 0vw;
+  padding: 1vw;
+}
+
+.isButton {
+  width: 45%;
+}
+
+.tool-bar-element select {
+  width: 100%;
+  background-color: none;
+  padding: 12px 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#cancelButton {
+  background-color: #f44336;
+}
+
+#cancelButton:hover {
+  background-color: red;
+}
+
+#addTaskSelectCategory{
+  border-radius: 0vw;
+}

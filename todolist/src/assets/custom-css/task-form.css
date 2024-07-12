@@ -1,0 +1,67 @@
+.taskListContent {
+  width: 100%;
+  height: 20%;
+  border-bottom: 1px solid black;
+  border-radius: 0vw;
+  border: 1px solid black;
+  padding: 1vw;
+  margin-top: 3vw;
+  background-color: grey;
+}
+
+#editModeButtons {
+  display: flex;
+  width: fit-content;
+}
+
+#editModeButtons button {
+  display: flex;
+  width: fit-content;
+}
+
+#taskListContentMiddle {
+  width: 100%;
+}
+
+.emoji_class {
+  font-size: 1vw;
+}
+
+.clickable {
+  transition-duration: 0.6s;
+  margin-left: 0.5vw;
+  border-bottom: 1px solid black;
+  border-radius: 0vw;
+  font-size: 1.5vw;
+  width: 80%;
+  display: flex;
+  place-items: center;
+}
+
+#taskListClickableContents {
+  display: flex;
+}
+
+#editModeInputs {
+  width: 100%;
+  height: fit-content;
+  padding: 15px;
+}
+
+#editModeInputs input[type='text'] {
+  width: 50%;
+  margin-left: 0%;
+  border: 1px solid black;
+}
+
+#editModeInputs select {
+  width: 30%;
+  padding: 12px 20px;
+  margin-left: 5%;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.onEditMode {
+  display: flex;
+}

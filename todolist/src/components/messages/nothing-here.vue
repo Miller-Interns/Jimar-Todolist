@@ -1,10 +1,10 @@
 <!-- Nothing Here Message -->
 
 <template>
-    <div class="nothing">
-        Nothing Here
-    </div>
+  <div class="nothing">Nothing Here</div>
 </template>
+
+<script setup lang="ts"></script>
 
 <style scoped>
 .nothing {

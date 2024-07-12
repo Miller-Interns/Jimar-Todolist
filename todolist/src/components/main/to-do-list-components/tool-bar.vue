@@ -1,50 +1,55 @@
 <!-- INSIDE OF TO-DO-LIST -->
 
 <template>
-
-  <div id="outerBox_toolBar"><!-- CHANGE NAMING TYPE INTO CAMEL_CASE, change into outerBox_toolBar-->
+  <div id="addTaskContainer" class="outerBox_toolBar">
     <!-- Inbox -->
-    <div id="inbox" class="tool-bar-element" @click="toggleCondition()"><!--USE FUNCTION, NEVER USE LOGIC IN TEMPLATE; PUT IN SCRIPT-->
-      <button v-bind:style="displayTaskList ? { 'background-color': '#f44336' } : {}">Inbox</button>
+    <div id="inbox" class="tool-bar-element" @click="toggleDisplayTaskList()">
+      <button v-bind:style="toggleDisplayTaskListStyle">Tasks</button>
     </div>
 
     <!-- Add Task -->
-    <div
-      id="newTask"
-      class="tool-bar-element"
-      @click="toggleAddButton_State(), updateDisplayTaskList(true)"
-    >
-      <button :style="addButton_State ? { 'background-color': '#f44336' } : {}">
-        Add Task
-      </button>
+    <div id="newTask" class="tool-bar-element" @click="addTaskMethods">
+      <button :style="toggleAddButtonStyle">Add Task</button>
     </div>
 
-    <!-- Add Task Pressed -->
-    <div id="addTaskIsPressed" class="tool-bar-element" v-if="addButton_State">
-      <input type="text" required placeholder="Enter Task Name" v-model="taskName" />
+    <!-- Add Task Form -->
+    <addTaskForm class="noMargin" />
+  </div>
 
-      <center>
-        <button @click="updateAddButton_State(taskName===''), addTodo(taskName)" class="isButton">
-          Create
-        </button>
+  <div id="categoriesContainer" class="outerBox_toolBar">
+    <div class="tool-bar-element">
+      <div @click="toggleShowCategoryOptions" class="bgColorSoftDarkGrey" id="categoriesContent">
+        <div>
+          Categories:
+        </div>
+        <div :style="toggleShowCategoryOptionStyle">
+          ⬆️
+        </div>
 
-        <button @click="updateAddButton_State(false)" id="cancelButton" class="isButton">
-          Cancel
-        </button>
-      </center>
+      </div>
+      <categoryOptions v-if="showCategoryOptions" class="bgColorSoftDarkGrey" />
     </div>
-
-    <!-- <div style="width:100%; height:fit-content; background-color: aqua;" class="tool-bar-element">
-    </div> -->
   </div>
 </template>
 
 <script setup lang="ts">
-import { addTodo } from '../../../composables/add-todo'
-import { addButton_State, toggleAddButton_State, updateAddButton_State } from '../../../composables/conditions'
-import { displayTaskList, toggleCondition, updateDisplayTaskList } from '../../../composables/conditions';
+import { toggleAddButtonState, toggleShowCategoryOptions } from '../../../composables/condition-related/toggle-functions'
+import { toggleDisplayTaskList } from '../../../composables/condition-related/toggle-functions'
+import {
+  toggleAddButtonStyle,
+  toggleDisplayTaskListStyle,
+  toggleShowCategoryOptionStyle
+} from '../../../composables/condition-related/conditional-styles'
+import addTaskForm from './add-task-form.vue'
+import categoryOptions from './templates/tool-bar-category-options.vue';
+import { showCategoryOptions } from '../../../composables/main-data-flow';
+import { updateDisplayTaskList } from '../../../composables/condition-related/conditionals';
 
-let taskName = ''; //used for v-model
+function addTaskMethods() {
+  toggleAddButtonState()
+  updateDisplayTaskList(true)
+}
+
 </script>
 
 <style scoped>

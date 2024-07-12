@@ -1,12 +1,14 @@
 <!-- INSIDE OF HOMEVIEW -->
 
- <!--
- TODOLIST APP
+<!--
+---------------------------
+TODOLIST APP
 The core of todolist APP
+---------------------------
  -->
 
 <template>
-  <div id="outerBox_todoList"><!--Change var name into outerBox_todoList-->
+  <div id="outerBox_todoList">
     <div id="toolBar">
       <toolBar />
     </div>
@@ -26,27 +28,43 @@ import displayBox from './to-do-list-components/display-box.vue'
 #outerBox_todoList {
   width: 100%;
   height: 100%;
-  /* border: 1px solid red; */
   background-color: #292b29;
 }
 
 #toolBar {
   width: 30%;
   height: 100%;
-  /* border: 1px solid purple; */
   float: left;
   border-radius: 0vw;
   background-color: #151515;
   color: white;
-  padding: 1vw;
+  padding: 0.5vw;
+  overflow: auto;
 }
 
 #displayBox {
   width: 70%;
   height: 100%;
-  /* border: 1px solid blue; */
   float: right;
   border-radius: 0vw;
-  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 </style>

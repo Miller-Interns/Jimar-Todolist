@@ -1,16 +1,20 @@
 <template>
-  <div>7/3/24</div>
-  <div>John Vincent Jimar</div>
+  <P>John Vincent Jimar</P>
+  <P id="date">Created: July 5,2024</P>
 </template>
 
 <script setup lang="ts"></script>
 
 <style scoped>
-div {
+p {
   display: flex;
   place-content: center;
   place-items: center;
   font-size: xx-large;
   margin: 1.5vw;
+}
+
+#date {
+  font-size: large;
 }
 </style>

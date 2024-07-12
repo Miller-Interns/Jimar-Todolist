@@ -1,32 +1,30 @@
-#outerBox_toolBar {
-  padding: 1vw;
+.outerBox_toolBar {
+  padding: 0.5vw;
+  border: 1px solid grey;
+  margin-bottom: 1vw;
 }
 
 .tool-bar-element {
   height: 10%;
-  margin-top: 1vw;
+  margin: 0.5vw;
 }
 
-#category {
-  border: 1px solid lightblue;
-}
-
-#addTaskIsPressed {
-  width: 100%;
-  border-top: 1px solid grey;
-  border-bottom: 1px solid grey;
+#categoriesContent{
   border-radius: 0vw;
   padding: 1vw;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
 }
 
-#cancelButton {
-  background-color: tomato;
+.noMargin{
+  margin:0;
 }
 
-#cancelButton:hover {
-  background-color: #f44336;
+#addTaskContainer button{
+  background-color: #353839;
 }
 
-.isButton {
-  width: 45%;
+#addTaskContainer button:hover{
+  background-color: rgb(196, 83, 63);
 }

@@ -1,0 +1,38 @@
+<!-- 
+ PURPOSE:
+ INSIDE OF SELECTS
+-->
+
+
+<template>
+  <!-- <option id="disabled" disabled value="" style="cursor: default;">Please select one</option> -->
+  <option>Life</option>
+  <option>Education</option>
+  <option>Work</option>
+  <option>Nature</option>
+  <option>Others</option>
+  <option>Test</option>
+</template>
+
+<style scoped>
+option {
+  background-color: #353839;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  padding: 1vw;
+  color:white;
+}
+
+option:hover {
+  background-color: grey;
+}
+
+#disabled {
+  /* border-bottom: 1px #161a1a solid; */
+  opacity: 0.8;
+}
+
+#disabled:hover {
+  background-color: #353839;
+}
+</style>
