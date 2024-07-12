@@ -5,7 +5,7 @@
 
     Category:
     <select id="addTaskSelectCategory" class="tool-bar-element" v-model="selectedCategory">
-      <OptionsSelect style="border-radius: 0vw;"/>
+      <OptionsSelect style="border-radius: 0vw;" />
     </select>
 
     <div class="marginTopBy1vw">
@@ -24,8 +24,7 @@
 import { ref } from 'vue'
 import { addTodo } from '../../../composables/add-todo'
 import {
-  updateAddButton_State,
-  updateDisplayTaskList
+  updateAddButton_State
 } from '../../../composables/condition-related/conditionals'
 import { addButtonState, selectedCategory } from '../../../composables/main-data-flow'
 import OptionsSelect from './templates/category-select-options.vue'
@@ -35,7 +34,6 @@ const taskName = ref('') //used for v-model
 function createToDo() {
   updateAddButton_State(taskName.value === '')
   addTodo(taskName.value, selectedCategory.value)
-  updateDisplayTaskList(true)
 }
 </script>
 

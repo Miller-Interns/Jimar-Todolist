@@ -8,26 +8,26 @@
     </div>
 
     <!-- Add Task -->
-    <div id="newTask" class="tool-bar-element" @click="toggleAddButtonState()">
+    <div id="newTask" class="tool-bar-element" @click="addTaskMethods">
       <button :style="toggleAddButtonStyle">Add Task</button>
     </div>
 
     <!-- Add Task Form -->
-    <addTaskForm class="noMargin"/>
+    <addTaskForm class="noMargin" />
   </div>
 
   <div id="categoriesContainer" class="outerBox_toolBar">
-    <div class="tool-bar-element" >
+    <div class="tool-bar-element">
       <div @click="toggleShowCategoryOptions" class="bgColorSoftDarkGrey" id="categoriesContent">
-        <div >
+        <div>
           Categories:
         </div>
-         <div :style="toggleShowCategoryOptionStyle">
+        <div :style="toggleShowCategoryOptionStyle">
           ⬆️
-         </div>
-         
+        </div>
+
       </div>
-      <categoryOptions v-if="showCategoryOptions" class="bgColorSoftDarkGrey"/>
+      <categoryOptions v-if="showCategoryOptions" class="bgColorSoftDarkGrey" />
     </div>
   </div>
 </template>
@@ -43,6 +43,13 @@ import {
 import addTaskForm from './add-task-form.vue'
 import categoryOptions from './templates/tool-bar-category-options.vue';
 import { showCategoryOptions } from '../../../composables/main-data-flow';
+import { updateDisplayTaskList } from '../../../composables/condition-related/conditionals';
+
+function addTaskMethods() {
+  toggleAddButtonState()
+  updateDisplayTaskList(true)
+}
+
 </script>
 
 <style scoped>
