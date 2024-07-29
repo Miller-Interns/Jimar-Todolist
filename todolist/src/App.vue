@@ -21,7 +21,7 @@ let goto_todolist = ref(false)
 
   <!-- If button ispressed then go to to-do-list -->
   <div style="height: 100%" v-if="goto_todolist">
-    <home/>
+    <home />
   </div>
 </template>
 
